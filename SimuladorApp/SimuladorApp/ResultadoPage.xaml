@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimuladorApp.ResultadoPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <Grid x:Name="grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Coste(€)" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="Micro"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Tiempo(H)" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="Micro"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Dist(Km)" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="Micro"/>
+                <Label Grid.Row="0" Grid.Column="3" Text="C.Ext(€)" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="Micro"/>
+                <Label Grid.Row="0" Grid.Column="4" Text="CO2(Kg)" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="Micro"/>
+
+                <Label Grid.Row="1" x:Name="lbl10" Grid.Column="0" Grid.ColumnSpan="5" Text="" FontSize="Small" TextColor="Black" BackgroundColor="LightGray"></Label>
+                <Label Grid.Row="2" x:Name="lbl20" Grid.Column="0" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="2" x:Name="lbl21" Grid.Column="1" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="2" x:Name="lbl22" Grid.Column="2" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="2" x:Name="lbl23" Grid.Column="3" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="2" x:Name="lbl24" Grid.Column="4" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+
+                <Label Grid.Row="3" x:Name="lbl30" Grid.Column="0" Grid.ColumnSpan="5" Text="" FontSize="Small" TextColor="Black" BackgroundColor="LightGray"></Label>
+                <Label Grid.Row="4" x:Name="lbl40" Grid.Column="0" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="4" x:Name="lbl41" Grid.Column="1" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="4" x:Name="lbl42" Grid.Column="2" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="4" x:Name="lbl43" Grid.Column="3" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="4" x:Name="lbl44" Grid.Column="4" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+
+                <Label Grid.Row="5" x:Name="lbl50" Grid.Column="0" Grid.ColumnSpan="5" Text="" FontSize="Small" TextColor="Black" BackgroundColor="LightGray"></Label>
+                <Label Grid.Row="6" x:Name="lbl60" Grid.Column="0" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="6" x:Name="lbl61" Grid.Column="1" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="6" x:Name="lbl62" Grid.Column="2" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="6" x:Name="lbl63" Grid.Column="3" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+                <Label Grid.Row="6" x:Name="lbl64" Grid.Column="4" Text="" HorizontalTextAlignment="End" FontSize="Small" />
+
+                <Label Grid.Row="7" x:Name="lbl70" Grid.Column="0" Grid.ColumnSpan="5" Text="" FontSize="Small" TextColor="White" BackgroundColor="Blue" FontAttributes="Bold"></Label>
+                <Label Grid.Row="8" x:Name="lbl80" Grid.Column="0" Text="" HorizontalTextAlignment="End" FontSize="Small" FontAttributes="Bold"/>
+                <Label Grid.Row="8" x:Name="lbl81" Grid.Column="1" Text="" HorizontalTextAlignment="End" FontSize="Small" FontAttributes="Bold"/>
+                <Label Grid.Row="8" x:Name="lbl82" Grid.Column="2" Text="" HorizontalTextAlignment="End" FontSize="Small" FontAttributes="Bold"/>
+                <Label Grid.Row="8" x:Name="lbl83" Grid.Column="3" Text="" HorizontalTextAlignment="End" FontSize="Small" FontAttributes="Bold"/>
+                <Label Grid.Row="8" x:Name="lbl84" Grid.Column="4" Text="" HorizontalTextAlignment="End" FontSize="Small" FontAttributes="Bold"/>
+
+                <Label Grid.Row="9" x:Name="lbl90" Grid.Column="0" Grid.ColumnSpan="5" Text="" HorizontalTextAlignment="Start" FontSize="Small"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

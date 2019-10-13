@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimuladorApp.ResultadosPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <StackLayout>
+                <Label Text="Resultado transporte por carretera" TextColor="Blue" FontSize="Large" />
+                <Label Text="" x:Name="lblOrigenDestino" TextColor="Black" FontSize="Medium"/>
+                <Grid x:Name="gridCarretera">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="End"  Text="Coste(€)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Text="Tiempo(H)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="End" Text="Dist(Km)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="End" Text="C.Ext(€)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="End" Text="CO2(Kg)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label x:Name="lblCarreteraCoste" Grid.Row="1" Grid.Column="0" HorizontalOptions="End"  Text="Coste(€)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label x:Name="lblCarreteraTiempo" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" Text="Tiempo(H)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label x:Name="lblCarreteraDistancia" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" Text="Dist(Km)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label x:Name="lblCarreteraCostesExternos" Grid.Row="1" Grid.Column="3" HorizontalOptions="End" Text="C.Ext(€)" FontAttributes="Bold" FontSize="Micro"></Label>
+                    <Label x:Name="lblCarreteraCosteEmisionCO2Terrestre" Grid.Row="1" Grid.Column="4" HorizontalOptions="End" Text="CO2(Kg)" FontAttributes="Bold" FontSize="Micro"></Label>
+                </Grid>
+                <Label Text="Resultados transporte intermodal" TextColor="Blue" FontSize="Large" />
+                <ListView x:Name="lstResultados" HasUnevenRows="True">
+                    <ListView.Header>
+                        <Grid x:Name="grid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="End"  Text="Coste(€)" FontAttributes="Bold" FontSize="Micro"></Label>
+                            <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Text="Tiempo(H)" FontAttributes="Bold" FontSize="Micro"></Label>
+                            <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="End" Text="Dist(Km)" FontAttributes="Bold" FontSize="Micro"></Label>
+                            <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="End" Text="C.Ext(€)" FontAttributes="Bold" FontSize="Micro"></Label>
+                            <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="End" Text="CO2(Kg)" FontAttributes="Bold" FontSize="Micro"></Label>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid x:Name="grid">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" x:Name="lbl00" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding PuertoOrigenPuertoDestino}" FontSize="Small" TextColor="DarkBlue" HorizontalTextAlignment="Start" BackgroundColor="LightGray"></Label>
+                                    <Label Grid.Row="1" x:Name="lbl11" Grid.Column="0" HorizontalTextAlignment="End" Text="{Binding CosteTotal,StringFormat='{0:N0}'}" FontSize="Small"></Label>
+                                    <Label Grid.Row="1" x:Name="lbl12" Grid.Column="1" HorizontalTextAlignment="End" Text="{Binding TiempoTotal, StringFormat='{0:N2}'}" FontSize="Small"></Label>
+                                    <Label Grid.Row="1" x:Name="lbl13" Grid.Column="2" HorizontalTextAlignment="End" Text="{Binding DistanciaTotal, StringFormat='{0:N0}'}" FontSize="Small"></Label>
+                                    <Label Grid.Row="1" x:Name="lbl14" Grid.Column="3" HorizontalTextAlignment="End" Text="{Binding CostesExternosTotal,StringFormat='{0:N0}'}" FontSize="Small"></Label>
+                                    <Label Grid.Row="1" x:Name="lbl15" Grid.Column="4" HorizontalTextAlignment="End" Text="{Binding CosteEmisionCO2Total,StringFormat='{0:N0}'}" FontSize="Small"></Label>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

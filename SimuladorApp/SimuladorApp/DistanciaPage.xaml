@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimuladorApp.DistanciaPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Origen: " />
+                <Entry x:Name="txtOrigen" Text="Madrid" />
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Destino: " />
+                <Entry x:Name="txtDestino" Text="Valencia" />
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="btnCalcular" Text="Calcular"></Button>
+                <Label x:Name="lblResultado" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado1" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado2" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado3" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado4" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado5" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado6" Text="" TextColor="Red"/>
+                <Label x:Name="lblResultado7" Text="" TextColor="Red"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

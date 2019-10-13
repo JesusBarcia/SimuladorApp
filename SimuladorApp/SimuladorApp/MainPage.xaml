@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimuladorApp.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <StackLayout BackgroundColor="AliceBlue" HeightRequest="150" Padding="10">
+                <StackLayout Orientation="Horizontal"  HeightRequest="70">
+                    <Label Text="Origen:"  FontSize="Default"  MinimumWidthRequest="80" WidthRequest="80" VerticalTextAlignment="Center" />
+                    <Entry x:Name="txtOrigen" WidthRequest="200" FontSize="Default" HorizontalTextAlignment="Start" />
+                    <Image x:Name="imgOrigen" Source="" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" />
+                    <!--                    <Label x:Name="lblOrigenGPS" FontSize="Micro" HorizontalTextAlignment="Start" /> -->
+                    <Label x:Name="lblOrigenLarge" FontSize="Micro" HorizontalTextAlignment="Start" WidthRequest="100"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  HeightRequest="50">
+                    <Label Text="Destino:" FontSize="Default" MinimumWidthRequest="80" WidthRequest="80"  VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtDestino" WidthRequest="200" FontSize="Default" HorizontalTextAlignment="Start"/>
+                    <Image x:Name="imgDestino" Source="" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" />
+                    <!--                <Label x:Name="lblDestinoGPS" FontSize="Micro" HorizontalTextAlignment="Start" /> -->
+                    <Label x:Name="lblDestinoLarge" FontSize="Micro" HorizontalTextAlignment="Start" WidthRequest="100"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  HeightRequest="50">
+                    <Label Text="Toneladas netas de carga:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center" />
+                    <Entry x:Name="txtToneladasTransportadas" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </StackLayout>
+            <!--
+                                    Parámetros a definir para la cadena de Transporte sólo por carretera 
+                                    ********************************************************************
+-->
+            <StackLayout BackgroundColor="Beige" Padding="10">
+                <StackLayout>
+                    <Label Text="Parámetros a definir para la cadena de Transporte sólo por carretera" FontSize="Small" TextColor="Blue" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Euros/Km:"  WidthRequest="100" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtCosteKm" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Vel. Media Km/h:" WidthRequest="120" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtVelocidad" WidthRequest="80" FontSize="Default"  HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Peajes/Tools €:" WidthRequest="100"  FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtPeajes" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <!--
+                                    Parámetros a definir para el tramo terrestre en las cadenas que usan el TMCD 
+                                    ****************************************************************************
+-->
+            <StackLayout BackgroundColor="Beige" Padding="10">
+                <StackLayout>
+                    <Label Text="Parámetros a definir para el tramo terrestre en las cadenas que usan el TMCD" FontSize="Small" TextColor="Blue" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Euros/Km Acarreo Origen:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtCosteKmAcarreoOrigen" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Vel. Km/h Acarreo Origen:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtVelocidadAcarreoOrigen" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Euros/Km Acarreo Destino:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtCosteKmAcarreoDestino" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Vel. Km/h Acarreo Destino:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtVelocidadAcarreoDestino" WidthRequest="80" FontSize="Default" HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+            </StackLayout>
+
+            <!--
+                                    Opciones adicionales para el tramo marítimo en las cadenas que usan el TMCD
+                                    ***************************************************************************
+-->
+            <StackLayout BackgroundColor="Beige" Padding="10">
+                <StackLayout>
+                    <Label Text="Opciones adicionales para el tramo marítimo en las cadenas que usan el TMCD" FontSize="Small" TextColor="Blue" />
+                    <Label Text="(Si no marca ninguna opción, se considera el embarque de semirremolque de carga general)" FontSize="Micro" TextColor="Blue" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Mercancías Peligrosas:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtRecargoMercanciaPeligrosa" WidthRequest="80"  />
+                    <Label Text="¿Acompañado?:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtRecargoCabezaTractora" WidthRequest="80" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Carga refrigerada:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtRecargoRefrigerado" WidthRequest="80" />
+                    <Label Text="Animales Vivos:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtRecargoAnimalesVivos" WidthRequest="80" />
+
+                </StackLayout>
+            </StackLayout>
+
+
+            <!--
+                                    Seleccione qué líneas quiere consultar (Pulse CTRL para marcar más de una línea)
+                                    ********************************************************************************
+-->
+            <StackLayout BackgroundColor="Beige" Padding="10">
+                <StackLayout>
+                    <Label Text="Seleccione las líneas a consultar" FontSize="Small" TextColor="Blue" />
+                </StackLayout>
+                <StackLayout>
+                    <Picker x:Name="txtListBoxLineas" Title="Seleccione una línea a consultar">
+                    </Picker>
+                </StackLayout>
+                <!--                <StackLayout>
+                   <Label Text="Seleccione qué líneas quiere consultar (Pulse CTRL para marcar más de una línea)" FontSize="Small" TextColor="Blue" />
+                </StackLayout>
+-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Alta Frecuencia" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtAltaFrecuencia" WidthRequest="80"  />
+                    <Label Text="Fachada Cantábrica:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtFachadaCantabrica" IsChecked="True" WidthRequest="80" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Fachada Atlántica:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtFachadaAtlantica" IsChecked="True"  WidthRequest="80" />
+                    <Label Text="Fachada Mediterránea:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                    <CheckBox x:Name="txtFachadaMediterranea" IsChecked="True"  WidthRequest="80" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Resultados ordenados por:" WidthRequest="180" FontSize="Default" VerticalTextAlignment="Center"/>
+                <Picker x:Name="txtResultadosOrdenadosPor">
+                    <Picker.Items>
+                        <x:String>Coste</x:String>
+                        <x:String>Tiempo</x:String>
+                        <x:String>Distancia</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="50">
+                <Button   WidthRequest="200" x:Name="btnCalcularRutas" Text="Calcular rutas"  FontSize="Default"/>
+            </StackLayout>
+            <!--<Label Text="Parámetros a definir para la cadena de Transporte (DEFAULT)" FontSize="Default" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (BODY)" FontSize="Body" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (CAPTION)" FontSize="Caption" TextColor="Blue" />
+
+            <Label Text="Parámetros a definir para la cadena de Transporte (HEADER)" FontSize="Header" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (LARGE)" FontSize="Large" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (MEDIUM)" FontSize="Medium" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (SMALL)" FontSize="Small" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (MICRO)" FontSize="Micro" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (TITLE)" FontSize="Title" TextColor="Blue" />
+            <Label Text="Parámetros a definir para la cadena de Transporte (SUBTITLE)" FontSize="Subtitle" TextColor="Blue" />-->
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
