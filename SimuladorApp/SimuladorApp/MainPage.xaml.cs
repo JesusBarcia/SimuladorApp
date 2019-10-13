@@ -11,7 +11,6 @@ using Xamarin.Forms;
 namespace SimuladorApp
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
-    //13-10-2019 21:37
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
